@@ -2,7 +2,7 @@
 
 A responsive static portfolio connecting rates and global market analysis with strategy validation, portfolio decisions, risk review, and account order-route tests. The page contains four selected projects; the complete project archive remains linked separately.
 
-[Repository](https://github.com/bucheoncityboy/markets-investment-portfolio) · [Full project archive](https://github.com/bucheoncityboy/portfolio-index)
+[Live portfolio](https://bucheoncityboy.github.io/markets-investment-portfolio/) · [Repository](https://github.com/bucheoncityboy/markets-investment-portfolio) · [Full project archive](https://github.com/bucheoncityboy/portfolio-index)
 
 ## Preview locally
 
@@ -28,7 +28,7 @@ Research figures describe project results within their stated assumptions. Accou
 
 ## Publish with GitHub Pages
 
-The Pages workflow is included with its deployment job disabled. To publish the site later, select **GitHub Actions** in repository **Settings → Pages**, remove the job's `if: ${{ false }}` guard, and push to `main` or run **Deploy portfolio to GitHub Pages**.
+The repository uses **GitHub Actions** as its Pages source. The workflow deploys updates pushed to `main` or a manual **Deploy portfolio to GitHub Pages** run. Its artifact contains only `index.html`, `styles.css`, and `.nojekyll`.
 
 The workflow uploads a Pages artifact and deploys it to the `github-pages` environment. No build tool or server runtime is required.
 
