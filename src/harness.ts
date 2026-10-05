@@ -41,8 +41,8 @@ includesAll(
   [
     "GLOBAL MARKETS · INVESTMENT · SEOUL",
     "Rates & Markets · Systematic Investing · Portfolio & Risk",
-    "금리와 글로벌 시장을 분석하고, 투자 아이디어를 데이터로 검증해 실제 운용까지 연결합니다.",
-    "경제지표와 시장 데이터를 수집·검증해 매크로·퀀트 분석, 리스크 관리, 주문 실행에 활용해왔습니다.",
+    "금리와 글로벌 시장을 분석하고 투자 아이디어를 데이터로 검증해 실제 운용까지 연결합니다.",
+    "경제지표와 시장 데이터를 수집하고 검증해 매크로·퀀트 분석과 리스크 관리, 주문 실행에 활용했습니다.",
   ],
   "Hero",
 );
@@ -51,7 +51,7 @@ assert.doesNotMatch(hero, /hero-bottomline|EXPLORE THE WORK/);
 assert.deepEqual(captures(hero, /class="flow-label">([^<]+)</g), ["Market", "Analysis", "Validation", "Position", "Execution"]);
 
 const work = captures(html, /<section\b[^>]*id="work"[^>]*>[\s\S]*?<\/section>/g, 0)[0] ?? "";
-includesAll(textContent(work), ["시장 분석부터 검증, 포지션 구성, 주문 실행까지 직접 연결한 경험입니다."], "Selected Experience intro");
+includesAll(textContent(work), ["금리 연구와 투자 전략 검증, 브리핑 자동화와 환위험 관리 프로젝트를 정리했습니다."], "Selected Experience intro");
 const cards = captures(work, /<article\b[^>]*class="project-card[^>]*>[\s\S]*?<\/article>/g, 0);
 assert.equal(cards.length, 4, "Selected Experience has four projects");
 assert.deepEqual(
@@ -124,7 +124,7 @@ for (const repo of ["krw-rates-integrated-research", "us-robust-live-ops", "mult
   assert.match(html, new RegExp(`href="https://github.com/bucheoncityboy/${repo}`));
 
 assert.match(stylesheet, /\.project-description\s*\{[^}]*font-size:\s*16px/);
-assert.match(stylesheet, /\.project-standard \.project-description\s*\{[^}]*font-size:\s*15px/);
+assert.match(stylesheet, /\.project-standard \.project-description\s*\{[^}]*font-size:\s*16px/);
 assert.match(stylesheet, /\.project-description\s*\{[^}]*max-width:\s*720px/);
 assert.match(stylesheet, /\.section-heading-compact \.section-intro\s*\{[^}]*max-width:\s*480px/);
 assert.match(stylesheet, /word-break:\s*keep-all/);
