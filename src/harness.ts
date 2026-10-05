@@ -43,12 +43,11 @@ includesAll(
     "Rates & Markets · Systematic Investing · Portfolio & Risk",
     "금리와 글로벌 시장을 분석하고, 투자 아이디어를 데이터로 검증해 실제 운용까지 연결합니다.",
     "경제지표와 시장 데이터를 수집·검증해 매크로·퀀트 분석, 리스크 관리, 주문 실행에 활용해왔습니다.",
-    "EXPLORE THE WORK",
   ],
   "Hero",
 );
 assert.doesNotMatch(hero, /한양대학교 경영학부|2026\.08 졸업/);
-assert.match(hero, /class="container hero-bottomline">\s*<a/);
+assert.doesNotMatch(hero, /hero-bottomline|EXPLORE THE WORK/);
 assert.deepEqual(captures(hero, /class="flow-label">([^<]+)</g), ["Market", "Analysis", "Validation", "Position", "Execution"]);
 
 const work = captures(html, /<section\b[^>]*id="work"[^>]*>[\s\S]*?<\/section>/g, 0)[0] ?? "";
@@ -94,9 +93,11 @@ assert.match(us, /체결 건수는 주문 경로 테스트 결과이며, 장기 
 assert.doesNotMatch(us, /CAGR|Sharpe|실현\s*(?:수익률|성과)/i);
 const global = textContent(cards[2] ?? "");
 includesAll(global, ["Python", "ECOS", "FRED", "공식", "거래일", "관측일", "40분", "10분 이내", "75%", "Multi-Asset Morning Briefing", "공식 기여자"], "Global briefing");
-assert.match(global, /글로벌 시장 브리핑 자동화 · K-Skill 정식 기능 채택/);
+assert.match(global, /개인 작성 기준/);
+assert.equal(captures(cards[2] ?? "", /<p class="project-description">/g, 0).length, 2, "Global briefing has two paragraphs");
 assert.match(cards[2] ?? "", /class="global-research"/);
-includesAll(textContent(cards[2] ?? ""), ["글로벌 IB 리서치 분석과 정책 파급경로 정리", "5개 분기 중 4개", "10개 분기 중 9개", "12.5%", "중립금리", "주요 경제지표 일정", "단기금리 pricing"], "IB research vignette");
+includesAll(textContent(cards[2] ?? ""), ["글로벌 IB 리서치 분석과 정책 파급경로 정리", "미국 주거·비주거 투자의 약세", "12.5%", "중립금리", "주요 경제지표 일정", "단기금리 pricing"], "IB research vignette");
+assert.doesNotMatch(textContent(cards[2] ?? ""), /5개 분기 중 4개|10개 분기 중 9개/);
 const fx = textContent(cards[3] ?? "");
 includesAll(fx, ["환위험", "K-ICS 요구자본", "시장 국면", "헤지비율", "HMM", "PPO", "10.38%", "Model-implied SCR reduction", "100% 고정헤지 대비", "모형 계산값"], "FX hedging");
 assert.doesNotMatch(fx, /요구자본비용[^.]*10\.38%|헤지비용[^.]*10\.38%|실현\s*(?:수익률|성과)\s*(?:을|를)?\s*(?:기록|달성)/);
@@ -129,6 +130,7 @@ assert.match(stylesheet, /\.section-heading-compact \.section-intro\s*\{[^}]*max
 assert.match(stylesheet, /word-break:\s*keep-all/);
 assert.match(stylesheet, /overflow-wrap:\s*break-word/);
 assert.match(stylesheet, /text-wrap:\s*pretty/);
+assert.doesNotMatch(stylesheet, /\.hero-bottomline/);
 assert.match(stylesheet, /text-align:\s*left/);
 assert.doesNotMatch(stylesheet, /text-align:\s*justify/i);
 assert.match(stylesheet, /@media \(max-width: 720px\)/);
