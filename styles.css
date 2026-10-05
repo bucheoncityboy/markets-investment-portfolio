@@ -46,20 +46,25 @@ body {
   text-wrap: pretty;
 }
 
-.project-featured h3,
-.project-standard h3,
 .section-heading h2,
 .skills-heading h2,
-.contact-layout h2,
-.education-panel h3,
-.activity-head h3 {
+.contact-layout h2 {
   word-break: keep-all;
-  overflow-wrap: break-word;
   text-wrap: balance;
 }
 
+.project-featured h3,
+.project-standard h3,
+.global-research h4,
+.education-panel h3,
+.activity-head h3,
+.additional-card h3 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
 .hero-role,
-.additional-card h3,
 .skill-name,
 .credential-row strong {
   word-break: keep-all;
@@ -409,6 +414,18 @@ a:focus-visible {
   letter-spacing: .09em;
 }
 
+.project-overline .project-category {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 4px;
+  min-width: 0;
+}
+
+.project-overline .project-category > span { white-space: nowrap; }
+
+.title-unit { display: inline-block; white-space: nowrap; }
+
 .project-category i, .source-list i { color: #afbac8; font-style: normal; }
 
 .project-badge {
@@ -431,7 +448,7 @@ a:focus-visible {
 .project-featured h3 {
   margin: 23px 0 21px;
   color: var(--navy);
-  font-size: clamp(25px, 3vw, 34px);
+  font-size: clamp(28px, 2.2vw, 32px);
   font-weight: 600;
   letter-spacing: -.055em;
   line-height: 1.25;
@@ -447,7 +464,7 @@ a:focus-visible {
   text-align: left;
 }
 
-.project-rates h3 { font-size: clamp(27px, 3.2vw, 36px); }
+.project-rates h3 { font-size: clamp(28px, 2.35vw, 32px); }
 .project-systematic h3 { font-size: clamp(25px, 2.8vw, 30px); }
 
 #work .project-featured-main > .project-description + .project-description,
@@ -510,7 +527,7 @@ a:focus-visible {
 }
 
 .project-standard { display: flex; flex-direction: column; min-width: 0; padding: 27px 25px 24px; }
-.project-standard h3 { margin: 22px 0 21px; color: var(--navy); font-size: 24px; font-weight: 600; letter-spacing: -.055em; line-height: 1.24; }
+.project-standard h3 { margin: 22px 0 21px; color: var(--navy); font-size: 22px; font-weight: 600; letter-spacing: -.055em; line-height: 1.24; }
 .project-subtitle { margin: 0 0 15px; color: #63718a; font-size: 11px; font-weight: 500; }
 .project-standard .project-description { max-width: none; font-size: 15px; line-height: 1.7; }
 .project-standard .project-description + .project-description { margin-top: 18px; }
