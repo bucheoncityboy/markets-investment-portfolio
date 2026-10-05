@@ -22,7 +22,7 @@ Node.js versions with native TypeScript support can also run:
 node src/harness.ts
 ```
 
-The harness checks the seven-section order, four project cards, eight process steps, verified figures and caveats, metadata, credentials, internal and repository links, contact privacy, responsive CSS, and Pages deployment configuration. Browser QA is still needed to inspect the actual layout at desktop and mobile widths.
+The harness checks the six-section order, four selected projects, eight process steps, research figures and caveats, education and credentials, internal and repository links, responsive typography, and Pages deployment configuration. Browser QA is still needed to inspect the actual layout at desktop and mobile widths.
 
 Research figures describe project results within their stated assumptions. Account fill counts describe order-route tests and do not establish long-term investment performance. See [source notes](docs/source-notes.md) for evidence and limits.
 
